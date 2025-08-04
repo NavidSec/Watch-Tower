@@ -1,0 +1,6 @@
+{
+    "program_name":"earnset",
+    "scopes": ["earnest.com","blog.earnest.com"],
+    "ooscopes": ["servicing.earnest.com","pbe.earnest.com"],
+    "providers":["subfinder","waybackurl","crtsh"]
+}

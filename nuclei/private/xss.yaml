@@ -1,0 +1,27 @@
+id: x9full-exact-payloads-detection
+
+info:
+  name: X9Full - Exact Payload Reflection Detection
+  author: Navid
+  tags: xss, x9full, reflection, exact
+  severity: medium
+  description: Detects exact reflection of specified XSS payloads in the HTTP response body, as provided by the user.
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"navid""'
+          - "'navid''"
+          - "<b/navid"
+          - "`navid`"
+          - "``navid``"
+      - type: status
+        status:
+          - 200

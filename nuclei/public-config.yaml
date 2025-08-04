@@ -1,0 +1,93 @@
+header:
+  X-BugBounty-Hackerone: 'Hackerone'
+  User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15; rv:108.0) Gecko/20100101 Firefox/108.0'
+
+severity: [critical, high, medium, low]
+
+rate-limit: 100
+concurrency: 50
+timeout: 10
+retries: 1
+headless: false
+
+exclude-tags: [tech, ssl, technologies]
+
+exclude-templates:
+  # CMS - WordPress, Joomla
+  - technologies/metatag-cms.yaml
+  - technologies/joomla-detect.yaml
+  - technologies/wordpress-detect.yaml
+  - technologies/wordpress/plugins/wp-pagenavi.yaml
+  - technologies/wordpress/plugins/redirection.yaml
+  - vulnerabilities/wordpress/*
+  - vulnerabilities/joomla/*
+  - vulnerabilities/drupal/*
+  - misconfiguration/drupal/drupal-user-enum-redirect.yaml
+
+  # بدون قابلیت اکسپلویت واقعی
+  - vulnerabilities/generic/request-based-interaction.yaml
+  - vulnerabilities/generic/oob-param-based-interaction.yaml
+  - vulnerabilities/generic/oob-header-based-interaction.yaml
+  - vulnerabilities/generic/cache-poisoning.yaml
+  - vulnerabilities/generic/host-header-injection.yaml
+  - vulnerabilities/generic/cors-misconfig.yaml
+
+  # misconfiguration کم‌ارزش یا noisy
+  - misconfiguration/xss-deprecated-header.yaml
+  - misconfiguration/graphql/graphql-alias-batching.yaml
+  - misconfiguration/http-missing-security-headers.yaml
+  - misconfiguration/unauthenticated-varnish-cache-purge.yaml
+  - misconfiguration/front-page-misconfig.yaml
+  - misconfiguration/iis-internal-ip-disclosure.yaml
+  - misconfiguration/salesforce-aura.yaml
+  - misconfiguration/unauthenticated-popup-upload.yaml
+  - misconfiguration/php-fpm-status.yaml
+  - misconfiguration/mamp-xdebug-detect.yaml
+  - misconfiguration/gitlab/gitlab-user-enum.yaml
+  - misconfiguration/gitlab/gitlab-public-repos.yaml
+  - misconfiguration/cloudflare-image-ssrf.yaml
+  - misconfiguration/adobe/adobe-connect-version.yaml
+  - misconfiguration/httponly-cookie-detect.yaml
+  - misconfiguration/sonarqube-public-projects.yaml
+  - misconfiguration/robots-txt-endpoint.yaml
+
+  # اطلاعات عمومی یا قدیمی
+  - miscellaneous/trace-method.yaml
+  - miscellaneous/options-method.yaml
+  - miscellaneous/apple-app-site-association.yaml
+  - miscellaneous/clientaccesspolicy.yaml
+  - miscellaneous/security-txt.yaml
+  - miscellaneous/old-copyright.yaml
+  - miscellaneous/robots-txt.yaml
+  - miscellaneous/addeventlistener-detect.yaml
+  - miscellaneous/email-extractor.yaml
+
+  # فایل و توکن عمومی
+  - exposures/files/crossdomain-xml.yaml
+  - exposures/files/ds-store-file.yaml
+  - exposures/files/backup-files.yaml
+  - exposures/tokens/generic/general-tokens.yaml
+  - exposures/tokens/generic/credentials-disclosure.yaml
+  - exposures/tokens/google/google-client-id.yaml
+  - exposures/tokens/google/google-api-key.yaml
+  - exposures/configs/debug-vars.yaml
+  - exposures/configs/keycloak-openid-config.yaml
+  - exposures/configs/azure-domain-tenant.yaml
+
+  # http templates
+  - http/technologies/waf-detect.yaml
+  - http/misconfiguration/http-missing-security-headers.yaml
+  - http/misconfiguration/httponly-cookie-detect.yaml
+  - http/exposures/backups/zip-backup-files.yaml
+
+  # CVEs غیرقابل‌استفاده
+  - cves/2014/CVE-2014-8682.yaml
+  - cves/2017/CVE-2017-5487.yaml
+
+  # موارد خاص قدیمی و کم‌ارزش
+  - vulnerabilities/seeyon/zhiyuan-oa-info-leak.yaml
+  - vulnerabilities/other/openvpn-hhi.yaml
+  - vulnerabilities/other/dlink-850L-info-leak.yaml
+  - vulnerabilities/other/caucho-resin-info-disclosure.yaml
+  - vulnerabilities/jenkins/jenkins-asyncpeople.yaml
+  - vulnerabilities/magento/magento-2-exposed-api.yaml

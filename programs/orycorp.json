@@ -1,0 +1,6 @@
+{
+    "program_name":"orycorp",
+    "scopes": ["oryapis.com","ory.sh","console.ory.sh","projects.oryapis.com"],
+    "ooscopes": ["community.ory.sh","archive.ory.sh","summit.ory.sh","k8s.ory.sh","sqa-web.ory.sh","trust.ory.sh","slack.ory.sh","changelog.ory.sh"],
+    "providers":["subfinder","waybackurl","crtsh"]
+}

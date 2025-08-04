@@ -1,0 +1,10 @@
+flask
+mongoengine
+psycopg2
+jsonify
+tempfile
+scrapy
+selenium
+undetected-chromedriver
+dnsgen
+pymongo

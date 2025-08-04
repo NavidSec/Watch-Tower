@@ -1,0 +1,6 @@
+{
+    "program_name":"swyftx",
+    "scopes": ["swyftx.com" ],
+    "ooscopes": [],
+    "providers":["subfinder","waybackurl","crtsh","virustotal"]
+}

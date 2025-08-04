@@ -1,0 +1,24 @@
+id: header-reflection-detection
+
+info:
+  name: Header Reflection Detection
+  severity: medium
+  description: Detects if special header values are reflected or trigger any unintended behavior.
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    headers:
+      {{header_name}}: "{{header_value}}"
+
+    matchers:
+      - type: word
+        words:
+          - '"navid""'
+          - "'navid''"
+          - "<b/navid"
+          - "`navid`"
+          - "``navid``"
+        part: body

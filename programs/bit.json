@@ -1,0 +1,7 @@
+{
+    "program_name":"bit",
+    "scopes": ["biltrewards.com","id.biltrewards.com","api.biltrewards.com","bilt.com","portal.neighborhood.biltrewards.com"],
+    "ooscopes": ["segment.biltrewards.com","cms.biltrewards.com","files.biltrewards.com","points.com","clicks.biltrewards.com","learning.biltrewards.com"],
+    "providers":["subfinder","waybackurl","crtsh","virustotal"]
+
+}

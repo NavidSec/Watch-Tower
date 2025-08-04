@@ -1,0 +1,33 @@
+{
+  "program_name": "elastic",
+  "scopes": [
+    "elastic.co",
+    "found.io",
+    "eops.nl",
+    "elstc.co",
+    "elasticnet.co",
+    "swiftype.com",
+    "cloud.elastic.co",
+    "www.elastic.co"
+  ],
+  "ooscopes": [
+    "elasticsearch.cn",
+    "community.elastic.co",
+    "discuss.elastic.co",
+    "wiki.elastic.co",
+    "go.es.co",
+    "info.elastic.co",
+    "elasticon.elastic.co",
+    "training.elastic.co",
+    "link.email.elastic.co",
+    "track.email.elastic.co",
+    "sendgrid.elastic.co",
+    "partners.elastic.co",
+    "jobs.elastic.co",
+    "buy.elastic.co",
+    "learn.elastic.co",
+    "github.com/elastic/*/wiki",
+    "github.com/swiftype/*/wiki"
+  ],
+  "providers":["subfinder","waybackurl","crtsh","virustotal"]
+}

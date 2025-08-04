@@ -1,0 +1,26 @@
+{
+  "program_name": "callsign",
+  "scopes": [
+    "s02.callsign.com",
+    "a2verify.com",
+    "a2develop.com",
+    "a2org.com"
+  ],
+  "ooscopes": [
+    "a2org.com",
+    "connector.callsign.com",
+    "docs.callsign.com",
+    "developer.callsign.com",
+    "support.callsign.com/v1/",
+    "portal.callsign.com/logout",
+    "www.callsign.com/careers",
+    "www.callsign.com/blog",
+    "www.callsign.com/press",
+    "www.callsign.com/legal",
+    "www.callsign.com/privacy",
+    "www.callsign.com/cookies",
+    "www.callsign.com/terms",
+    "community.callsign.com",
+    "status.callsign.com"
+  ]
+}
