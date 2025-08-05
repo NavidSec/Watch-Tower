@@ -29,5 +29,5 @@
     "github.com/elastic/*/wiki",
     "github.com/swiftype/*/wiki"
   ],
-  "providers":["subfinder","waybackurl","crtsh","virustotal"]
+  "providers":["subfinder","waybackurl","crtsh"]
 }

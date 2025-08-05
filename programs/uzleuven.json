@@ -1,0 +1,7 @@
+{
+    "program_name":"uzleuven",
+    "scopes": ["kwsdose.be","playuzleuven.be","uzleuven.be","uzleuven.academia.edu","uzleuven.impress.be","uzleuven.cmealmaaltijden.com","uzleuven.referrals.selectminds.com",
+    "uzleuven.be.siterate.org","uzleuven.taleo.net","uzleuven.centoview.eu","uzleuven.learn.taleo.net"],
+    "ooscopes": ["jobs.uzleuven.be","uzleuven.atlassian.net","vacatures.uzleuven.be"],
+    "providers":["subfinder","waybackurl","crtsh","virustotal"]
+}

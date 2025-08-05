@@ -95,17 +95,6 @@ if __name__ == "__main__":
             print(f"[{current_time()}] [WARN] crt.sh query for '{domain}' failed or returned no data.")
         else:
             for sub in subs:
-                if sub.startswith('*.'):
-                    scope_to_add = sub[2:]
-                    print(f"[{current_time()}] Found wildcard scope: {scope_to_add}. Adding to program scopes.")
-                    
-                    if scope_to_add not in program.scopes:
-                        program.scopes.append(scope_to_add)
-                        program.save()
-                        print(f"[{current_time()}] Successfully added {scope_to_add} to program scopes.")
-                    else:
-                        print(f"[{current_time()}] {scope_to_add} already exists in program scopes.")
-                else:
                     if not should_skip_subdomain(sub):
                         upsert_subdomain(program.program_name, sub, 'crtsh')
             print(f"[{current_time()}] [+] Found {len(subs)} subdomain(s) for '{domain}'")

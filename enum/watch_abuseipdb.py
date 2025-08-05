@@ -1,28 +1,14 @@
 #!/usr/bin/env python3
-import os
-import sys
-import time
-import re
+import os,re,sys,time,tldextract,cloudscraper
 from datetime import datetime
 from bs4 import BeautifulSoup
-import tldextract
-import cloudscraper
-
-# add database module path
-sys.path.append(os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'database')
-))
-sys.path.append(os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..')
-))
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
 from db import Programs, upsert_subdomain
 
-
 def current_time():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
 
 def should_skip_subdomain(sub):
     if re.match(r'^\d+\.', sub):
@@ -32,7 +18,6 @@ def should_skip_subdomain(sub):
             print(f"[{current_time()}] starts with digit, skipping '{sub}'")
             return True
     return False
-
 
 def fetch_abuseipdb_subdomains(domain):
     url = f"https://www.abuseipdb.com/whois/{domain}"

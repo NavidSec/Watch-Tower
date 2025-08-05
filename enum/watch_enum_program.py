@@ -29,12 +29,8 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: watch_enum_program program_name")
         sys.exit(1)
-
     program_name = sys.argv[1]
-
-   
     program = Programs.objects(program_name=program_name).first()
-
     if not program:
         print(f"[{current_time()}] Program '{program_name}' not found in database.")
         sys.exit(1)
@@ -54,8 +50,8 @@ if __name__ == "__main__":
         print("crtsh is Running....")
         run_command_in_zsh(f"python3 {os.path.join(enum_path, 'watch_crtsh.py')} {scope}")
 
-        print("abuseipdb is Running....")
-        run_command_in_zsh(f"python3 {os.path.join(enum_path, 'watch_abuseipdb.py')} {scope}")
+        # print("abuseipdb is Running....")
+        # run_command_in_zsh(f"python3 {os.path.join(enum_path, 'watch_abuseipdb.py')} {scope}")
 
         print("waybackurl is Running....")
         run_command_in_zsh(f"python3 {os.path.join(enum_path, 'watch_waybackurl.py')} {scope}")

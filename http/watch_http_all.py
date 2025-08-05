@@ -63,7 +63,7 @@ def httpx_file(subdomain_info_pairs, domain):
         temp_path = temp_file.name
 
     command = f"httpx -l {temp_path} -silent -json -favicon -fhr -tech-detect -irh -include-chain -timeout 10 -t 100 -retries 5 \
-    -rl 200 -nf -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS 20180101 Firefox/108.0)' -H 'Referer: https://{subdomain}'"
+    -rl 200 -nf -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS 20180101 Firefox/108.0)' -H 'Referer: https://{domain}'"
     print(f"{colors.GRAY}Executing command: {command}{colors.RESET}")
 
     try:

@@ -1,0 +1,6 @@
+{
+    "program_name":"usz",
+    "scopes": ["unispital.ch","usz.ch" ],
+    "ooscopes": [],
+    "providers":["subfinder","waybackurl","crtsh","virustotal"]
+}

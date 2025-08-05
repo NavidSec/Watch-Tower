@@ -71,9 +71,7 @@ def dnsx_worker(subdomains_chunk, domain):
             "-json",
             "-retry", "3",
             "-r",  config().get("RESOLVERS")
-
         ]
-        print(f"{colors.YELLOW}[{current_time()}] Executing dnsx on chunk size {len(subdomains_chunk)}:{colors.RESET} {' '.join(command)}")
 
         process = subprocess.Popen(
             command,
@@ -89,40 +87,28 @@ def dnsx_worker(subdomains_chunk, domain):
                 continue
             try:
                 obj = json.loads(line)
-                if not isinstance(obj, dict):
-                    print(f"[{current_time()}] Warning: JSON is not a dict: {line}")
-                    continue
-
                 host = obj.get("host")
                 ips = obj.get("a", [])
-                if isinstance(ips, list) and all(isinstance(ip, dict) for ip in ips):
-                    ips = [ans.get("a") for ans in ips if ans.get("a")]
 
                 info = detect_ip_info(ips)
 
                 upsert_lives({
                     "subdomain": host,
-                    " dodomain":main,
+                    "domain": domain,
                     "ips": ips,
                     "info": info
                 })
 
-            except json.JSONDecodeError:
-                print(f"[{current_time()}] Could not parse DNSX JSON output: {line}")
-            except Exception as e:
-                print(f"[{current_time()}] Unexpected error: {e} — line was: {line}")
+            except Exception:
+                continue
 
         process.stdout.close()
         process.wait()
-
-        err = process.stderr.read()
-        if err:
-            sys.stderr.write(f"[{current_time()}] STDERR: {err}\n")
+        process.stderr.close()
 
     finally:
         if subdomains_file and os.path.exists(subdomains_file):
             os.remove(subdomains_file)
-
 
 def dnsx_parallel(subdomains_array, domain):
     if not subdomains_array:

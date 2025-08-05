@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-import os, sys, subprocess
+import os, sys, subprocess,re,tldextract
 from datetime import datetime 
-import re 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
 from db import *
-import tldextract
 
 def current_time():
     return datetime.now().strftime('%Y-%m-%d %H:%M:%S')

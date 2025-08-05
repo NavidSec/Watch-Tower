@@ -148,6 +148,7 @@ def upsert_http(obj):
             url = obj.get('url'),
             final_url = obj.get('final_url'),
             favicon = obj.get('favicon'),
+            info=obj.get("info"),
             created_date = datetime.now(),
             last_update = datetime.now(),
         )
@@ -221,6 +222,10 @@ def upsert_program(program_name, new_scopes, new_ooscopes, new_providers):
         print(f"[{current_time()}] Inserted new live program: {new_prog.program_name}")
 
 def upsert_subdomain(program_name, subdomain_name, provider):
+    if subdomain_name.startswith("*."):
+        print(f"[{current_time()}] wildcard skip {subdomain_name}")
+        return True
+
     banned_patterns = [
         r'^[a-f0-9\-]{5,}--[^.]+\.(netlify\.com)$',
         r'^\d+(\.\d+)*\.(netlify\.com)$',
