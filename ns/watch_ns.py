@@ -53,7 +53,6 @@ def detect_ip_info(ip_list):
     return "None"
 
 def dnsx(subdomains_array, domain):
-    print(domain)
     temp_file_path = None
     try:
         with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding='utf-8') as temp_file:
@@ -104,7 +103,7 @@ def dnsx(subdomains_array, domain):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: script.py <program_name>")
+        print("Usage: watch_ns <program_name>")
         sys.exit(1)
 
     program_name = sys.argv[1]
