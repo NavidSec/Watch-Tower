@@ -1,0 +1,6 @@
+{
+    "program_name":"parspack",
+    "scopes": ["parspack.org","parspack.com","parspack.net","parspack.ir","plinks.parspack.com","campaign.parspack.com"],
+    "ooscopes": [],
+    "providers":["subfinder","waybackurl","crtsh","virustotal"]
+}
