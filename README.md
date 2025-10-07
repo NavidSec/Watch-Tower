@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # Watch-Tower
 🛡️ A modular bug bounty watch system to manage programs, track subdomains, and monitor live targets. Built for automation and scale.
-=======
+
 # watchtower
 welcome to my watch tower 
 ##  zshrc configrution 
@@ -25,4 +25,4 @@ alias watch_nuclei_all="/home/navid/watch_tower/nuclei/watch_nuclei_all.py"
 
 
 ```
->>>>>>> 5056b9e (Initial commit)
+
