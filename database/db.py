@@ -5,15 +5,9 @@ from pymongo import MongoClient
 import os,json,sys,re
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config import config
-def current_time():
-    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
 connect(db='watch', host='mongodb://127.0.0.1:27017/watch')
 
-def get_domain_name(url):
-    extracted = tldextract.extract(url)
-    if extracted.domain and extracted.suffix:
-        return f"{extracted.domain}.{extracted.suffix}"
-    return url
 class Programs(Document):
     program_name = StringField(required=True)
     scopes = ListField(StringField(), default=[])
@@ -87,9 +81,13 @@ class http(Document):
 #     else:
 #         print(f"Failed to send message. Status code: {response.status_code}")
 
-
-connect(db="watch" , host="mongodb://127.0.0.1:27017/watch")
-
+def get_domain_name(url):
+    extracted = tldextract.extract(url)
+    if extracted.domain and extracted.suffix:
+        return f"{extracted.domain}.{extracted.suffix}"
+    return url
+def current_time():
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 def upsert_http(obj):
     program = Programs.objects(scopes__contains=obj.get("scope")).first()
     if not program:
